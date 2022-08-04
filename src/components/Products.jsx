@@ -4,21 +4,22 @@ import '../styles/components/Products.css';
 import AppContext from '../context/AppContext';
 
 const Products = () => {
-  const { state, addToCart } = useContext(AppContext);
-  const { products } = state;
+  const { products, addToCart } = useContext(AppContext);
+  
 
   const handleAddToCart  = (product) => () => {
     addToCart(product);
   };
 
   return (
-    <div className="Products">
-      <div className="Products-items">
-        {products.map(product => (
-          <Product key={product.id} product={product} handleAddToCart={ handleAddToCart }/>
-        ))}
-      </div>
-    </div>
+    // console.log(products)
+     <div className="Products">
+       <div className="Products-items">
+          {products.map(product => (
+           <Product key={product.uid} product={product} handleAddToCart={ handleAddToCart }/>
+         ))} 
+       </div>
+     </div>
   );
 }
 
