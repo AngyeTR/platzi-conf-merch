@@ -1,4 +1,5 @@
 import React, {useContext } from "react";
+import { Helmet } from "react-helmet";
 import { PayPalButton } from "react-paypal-button-v2";
 import AppContext from "../context/AppContext";
 import "../styles/components/Payment.css";
@@ -57,6 +58,10 @@ const Payment = () => {
       };
       
     return(
+        <>
+        <Helmet>
+            <title>Platzi Conf Merch - Info de pago</title>
+        </Helmet>
         <div className="Payment">
             <div className="Payment-content">
                 <h3>Resumen del Pedido:</h3>
@@ -84,6 +89,7 @@ const Payment = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

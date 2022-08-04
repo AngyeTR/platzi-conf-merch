@@ -1,4 +1,5 @@
 import React, { useRef, useContext } from "react";
+import { Helmet } from "react-helmet";
 import "../styles/components/Information.css";
 import { Link, useNavigate } from "react-router-dom";
 import AppContext from "../context/AppContext";
@@ -28,6 +29,10 @@ const Information = () => {
     };   
 
     return(
+        <>
+        <Helmet>
+            <title>Platzi Conf Merch - Comprador</title>
+        </Helmet>
         <div className="Information">
             <div className="Information-content">
                 <div className="Information-head">
@@ -73,7 +78,8 @@ const Information = () => {
                 </div>
             </div>
         </div>
-    );
-};
+    </>
+);
+                    }
 
 export default Information;

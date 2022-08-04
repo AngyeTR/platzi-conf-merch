@@ -1,4 +1,5 @@
 import React, {useContext} from "react";
+import { Helmet } from "react-helmet";
 import "../styles/components/Success.css";
 import AppContext from "../context/AppContext";
 import Map from "../components/Map";
@@ -10,6 +11,10 @@ const Success = () => {
     const { buyer } = state;
     const location = useGoogleAddress(buyer[0].address)
     return(
+        <>
+        <Helmet>
+            <title>Platzi Conf Merch - Great!</title>
+        </Helmet>
         <div className="Success">
             <div className="Success-content">
                 <h2>{`${buyer[0].name}, Gracias por tu compra`}</h2>
@@ -19,6 +24,7 @@ const Success = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 
