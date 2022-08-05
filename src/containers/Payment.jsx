@@ -23,7 +23,7 @@ const Payment = () => {
 
     const handleSumTotal = () => {
         const reducer = (accumulator, currentValue) =>
-            accumulator + currentValue.price;
+            accumulator + currentValue.attributes.price;
         const sum = cart.reduce(reducer, 0);
         return sum;
     };
@@ -66,10 +66,10 @@ const Payment = () => {
             <div className="Payment-content">
                 <h3>Resumen del Pedido:</h3>
                 {cart.map((item)=> (
-                <div className="Payment-item" key="item.title">
+                <div className="Payment-item" key="item.attributes.title">
                     <div className="Payment-element">
-                        <h4>{item.title}</h4>
-                        <span>$ {item.price}</span>
+                        <h4>{item.attributes.title}</h4>
+                        <span>$ {item.attributes.price}</span>
                     </div>
                 </div>
                 ))

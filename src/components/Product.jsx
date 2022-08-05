@@ -8,8 +8,8 @@ const Product = ({ product, handleAddToCart }) => {
         <h2>
           {product.attributes.title}
           <span>
+            {" "}
             $
-            {' '}
             {product.attributes.price}
           </span>
         </h2>

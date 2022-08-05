@@ -14,7 +14,7 @@ const Checkout = () => {
 
     const handleSumTotal = () => {
         const reducer = (accumulator, currentValue) =>
-            accumulator + currentValue.price;
+            accumulator + currentValue.attributes.price;
         const sum = cart.reduce(reducer, 0);
         return sum;
     };
@@ -32,8 +32,8 @@ const Checkout = () => {
                 {cart.map((item) => (
                 <div className="Checkout-item" key="item.title">
                     <div className="Checkout-element">
-                        <h4>{item.title}</h4>
-                        <span>{item.price}</span>
+                        <h4>{item.attributes.title}</h4>
+                        <span>{item.attributes.price}</span>
                 </div>
                 <button type="button" onClick={handleRemove(item)}><i className="fas fa-trash-alt"></i></button>                  
                 </div>
